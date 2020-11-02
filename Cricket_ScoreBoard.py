@@ -26,7 +26,7 @@ class Destination:
                 self.root=root
                 self.root.title("Online Score Board")
                 self.root.geometry("1270x200+0+0") 
-                #root.iconbitmap(r'E:\\Python GUI Project\\Pictures\\ball.ico')                       #fevicon icon
+                root.iconbitmap(r'ball.ico')                     #fevicon icon
 
         #===========Frame-1================
                 frame1=Frame(self.root,bg='#2c2c2c')
@@ -566,7 +566,7 @@ class Datastation:
                 self.root1=root1
                 self.root1.title("Data-Station")
                 self.root1.geometry("1270x500+0+0")
-                #root1.iconbitmap(r'E:\\Python GUI Project\\Pictures\\bat.ico')          #fevicon icon
+                root1.iconbitmap(r'bat.ico')          #fevicon icon
 
         #=============Menu Bars============
                 m=Menu(self.root1)
