@@ -547,6 +547,7 @@ class Destination:
                 evod=1
                 out_reason_checker=0
                 CSV_checker=0
+                app1.auto.deselect()
                 self.t_name.set("TEAM")
                 self.wkt.set("- 0")
                 self.B1scr.set('0')
