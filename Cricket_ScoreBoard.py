@@ -777,13 +777,13 @@ class DataControl:
         def Excel(self):
                 global score2,score3,ballsplayed,ballsplayed2,Strike_Pointer,wickets,Strike_List,CSV_checker
                 if(CSV_checker==0):
-                        with open("E:\\Python GUI Project\\Data.csv","w") as csvfile:
+                        with open("Data.csv","w") as csvfile:
                                 writer=csv.writer(csvfile)
                                 writer.writerow(["Player Name","Score","Balls Played","Strike Rate"])
                                 csvfile.close()
                                 CSV_checker=1
 
-                with open("E:\\Python GUI Project\\Data.csv","a") as csvfile:
+                with open("Data.csv","a") as csvfile:
                         writer=csv.writer(csvfile)
                         if(Strike_Pointer==0):
                                 Strike_Rate=(score2/ballsplayed)*100
@@ -797,13 +797,13 @@ class DataControl:
         def End_Excel(self):
                 global score2,score3,ballsplayed,ballsplayed2,Strike_Pointer,wickets,Strike_List,CSV_checker
                 if(CSV_checker==0):
-                        with open("E:\\Python GUI Project\\Data.csv","w") as csvfile:
+                        with open("Data.csv","w") as csvfile:
                                 writer=csv.writer(csvfile)
                                 writer.writerow(["Player Name","Score","Balls Played","Strike Rate"])
                                 csvfile.close()
                                 CSV_checker=1
 
-                with open("E:\\Python GUI Project\\Data.csv","a") as csvfile:
+                with open("Data.csv","a") as csvfile:
                         writer=csv.writer(csvfile)
                         Strike_Rate1=(score2/ballsplayed)*100
                         Strike_Rate2=(score3/ballsplayed2)*100
@@ -813,7 +813,7 @@ class DataControl:
                 
 
         def Show_Graphical_Performance(self):
-                d=read_csv("E:\\Python GUI Project\\Data.csv")
+                d=read_csv("Data.csv")
                 Name=d['Player Name'].tolist()
                 sc=d['Score'].tolist()
                 BP=d['Balls Played'].tolist()
@@ -829,7 +829,7 @@ class DataControl:
                 plt.show()
                
         def Show_Graphical_Performance_Score(self):
-                d=read_csv("E:\\Python GUI Project\\Data.csv")
+                d=read_csv("Data.csv")
                 Name=d['Player Name'].tolist()
                 sc=d['Score'].tolist()
                 BP=d['Balls Played'].tolist()
@@ -843,7 +843,7 @@ class DataControl:
                 plt.show()
 
         def Show_Graphical_Performance_BallsPlayed(self):
-                d=read_csv("E:\\Python GUI Project\\Data.csv")
+                d=read_csv("Data.csv")
                 Name=d['Player Name'].tolist()
                 sc=d['Score'].tolist()
                 BP=d['Balls Played'].tolist()
@@ -857,7 +857,7 @@ class DataControl:
                 plt.show()
 
         def Show_Graphical_Performance_StrikeRate(self):
-                d=read_csv("E:\\Python GUI Project\\Data.csv")
+                d=read_csv("Data.csv")
                 Name=d['Player Name'].tolist()
                 sc=d['Score'].tolist()
                 BP=d['Balls Played'].tolist()
