@@ -573,7 +573,10 @@ class Datastation:
                 self.root1.config(menu=m)
                 filemenu=Menu(m,tearoff=0)
                 m.add_cascade(label='Options', m=filemenu)
-                filemenu.add_command(label='Statatics',command=DC.Show_Graphical_Performance)
+                filemenu.add_command(label='Full Statatics',command=DC.Show_Graphical_Performance)
+                filemenu.add_command(label='Score Stats',command=DC.Show_Graphical_Performance_Score)
+                filemenu.add_command(label='Balls Played Stats',command=DC.Show_Graphical_Performance_BallsPlayed)
+                filemenu.add_command(label='Strike Rate Stats',command=DC.Show_Graphical_Performance_StrikeRate)
                 filemenu.add_command(label='Exit',command=DC.Exit)
 
         #===========Frame-2================
@@ -824,6 +827,49 @@ class DataControl:
                 plt.ylabel('Performance')
                 plt.legend(loc="upper left")
                 plt.show()
+               
+        def Show_Graphical_Performance_Score(self):
+                d=read_csv("E:\\Python GUI Project\\Data.csv")
+                Name=d['Player Name'].tolist()
+                sc=d['Score'].tolist()
+                BP=d['Balls Played'].tolist()
+                SR=d['Strike Rate'].tolist()
+
+                plt.plot(Name,sc,label='Score',marker='o',Linestyle='--')
+                plt.title('Cricket')
+                plt.xlabel('Name')
+                plt.ylabel('Score')
+                plt.legend(loc="upper left")
+                plt.show()
+
+        def Show_Graphical_Performance_BallsPlayed(self):
+                d=read_csv("E:\\Python GUI Project\\Data.csv")
+                Name=d['Player Name'].tolist()
+                sc=d['Score'].tolist()
+                BP=d['Balls Played'].tolist()
+                SR=d['Strike Rate'].tolist()
+
+                plt.plot(Name,BP,label='Balls Played',marker='o',Linestyle='--',color='orange')
+                plt.title('Cricket')
+                plt.xlabel('Name')
+                plt.ylabel('Balls Played')
+                plt.legend(loc="upper left")
+                plt.show()
+
+        def Show_Graphical_Performance_StrikeRate(self):
+                d=read_csv("E:\\Python GUI Project\\Data.csv")
+                Name=d['Player Name'].tolist()
+                sc=d['Score'].tolist()
+                BP=d['Balls Played'].tolist()
+                SR=d['Strike Rate'].tolist()
+
+                plt.plot(Name,SR,label='Strike Rate',marker='o',Linestyle='--',color='green')
+                plt.title('Cricket')
+                plt.xlabel('Name')
+                plt.ylabel('Strike Rate')
+                plt.legend(loc="upper left")
+                plt.show()
+         
 
         def Exit(self):
                 exit()
